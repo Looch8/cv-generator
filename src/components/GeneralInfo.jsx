@@ -3,18 +3,24 @@ const GeneralInfo = ({
 	handleEmailInput,
 	handleNumberInput,
 	handleSubmit,
+	displayInput,
+	handleEditClick,
 }) => {
-	return (
-		<form onSubmit={handleSubmit}>
-			<label>Name:</label>
-			<input onChange={handleNameInput}></input>
-			<label>Email:</label>
-			<input onChange={handleEmailInput}></input>
-			<label>Phone Number:</label>
-			<input onChange={handleNumberInput}></input>
-			<button>Submit</button>
-		</form>
-	);
+	if (displayInput == true) {
+		return (
+			<form onSubmit={handleSubmit}>
+				<label>Name:</label>
+				<input onChange={handleNameInput}></input>
+				<label>Email:</label>
+				<input onChange={handleEmailInput}></input>
+				<label>Phone Number:</label>
+				<input onChange={handleNumberInput}></input>
+				<button>Submit</button>
+			</form>
+		);
+	} else {
+		return <button onClick={handleEditClick}>Edit Resume</button>;
+	}
 };
 
 export default GeneralInfo;

@@ -3,10 +3,11 @@ import GeneralInfo from "./components/GeneralInfo";
 import DisplayResume from "./components/DisplayResume";
 
 function App() {
-	const [name, setName] = useState();
-	const [email, setEmail] = useState();
-	const [number, setNumber] = useState();
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [number, setNumber] = useState("");
 	const [displayForm, setDisplayForm] = useState(false);
+	const [displayInput, setDisplayInput] = useState(true);
 
 	const handleNameInput = (e) => {
 		setName(e.target.value);
@@ -21,6 +22,11 @@ function App() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setDisplayForm(true);
+		setDisplayInput(false);
+	};
+
+	const handleEditClick = () => {
+		setDisplayInput(true);
 	};
 
 	return (
@@ -33,6 +39,8 @@ function App() {
 				name={name}
 				email={email}
 				number={number}
+				displayInput={displayInput}
+				handleEditClick={handleEditClick}
 			/>
 			<DisplayResume
 				name={name}
