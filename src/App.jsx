@@ -6,6 +6,7 @@ function App() {
 	const [name, setName] = useState();
 	const [email, setEmail] = useState();
 	const [number, setNumber] = useState();
+	const [displayForm, setDisplayForm] = useState(false);
 
 	const handleNameInput = (e) => {
 		setName(e.target.value);
@@ -19,6 +20,7 @@ function App() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		setDisplayForm(true);
 	};
 
 	return (
@@ -32,9 +34,12 @@ function App() {
 				email={email}
 				number={number}
 			/>
-			<div className="display-content">
-				<DisplayResume name={name} email={email} number={number} />
-			</div>
+			<DisplayResume
+				name={name}
+				email={email}
+				number={number}
+				displayForm={displayForm}
+			/>
 		</>
 	);
 }

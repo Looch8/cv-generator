@@ -12,6 +12,7 @@ const GeneralInfo = ({
 			<input onChange={handleEmailInput}></input>
 			<label>Phone Number:</label>
 			<input onChange={handleNumberInput}></input>
+			<button>Submit</button>
 		</form>
 	);
 };
