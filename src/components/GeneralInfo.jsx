@@ -6,7 +6,7 @@ const GeneralInfo = ({
 	displayInput,
 	handleEditClick,
 }) => {
-	if (displayInput == true) {
+	if (displayInput) {
 		return (
 			<form onSubmit={handleSubmit}>
 				<label>Name:</label>

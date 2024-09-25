@@ -1,5 +1,5 @@
 const DisplayResume = ({ name, email, number, displayForm }) => {
-	if (displayForm == false) {
+	if (!displayForm) {
 		return <h1>Resume will appear here...</h1>;
 	} else
 		return (
